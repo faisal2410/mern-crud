@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "475eeaf5-1d21-48d9-ac8a-0f1e40e37b9d",
+		"name": "CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16322007"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "read",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASEURL}}/ReadProduct",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"ReadProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASEURL}}/UpdateProduct/id",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"UpdateProduct",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASEURL}}/DeleteProduct/id",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"DeleteProduct",
+						"id"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASEURL",
+			"value": "http://localhost:8000/api/v1",
+			"type": "string"
+		}
+	]
+}
