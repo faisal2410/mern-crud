@@ -18,9 +18,8 @@ productsModel.create(reqBody,(err,data)=>{
 }
 // R=Read
 exports.ReadProduct=(req,res)=>{
-    let query={}
-    let projection="ProductName ProductCode Img UnitPrice Qty TotalPrice"
-    productsModel.find(query,projection,(err,data)=>{
+    
+    productsModel.find((err,data)=>{
         if(err){
             res.status(400).json({status:"Fail",data:err})
         }else{
@@ -30,6 +29,21 @@ exports.ReadProduct=(req,res)=>{
     })
 
 }
+// Read by Id
+exports.ReadProductById=(req,res)=>{
+    let id=req.params.id;
+    let query={_id:id};   
+    productsModel.find(query,(err,data)=>{
+        if(err){
+            res.status(400).json({status:"Fail",data:err})
+        }else{
+            res.status(200).json({status:"Success",data:data})
+        }
+
+    })
+
+}
+
 // U=Update
 exports.UpdateProduct=(req,res)=>{
     let id=req.params.id;

@@ -3,9 +3,11 @@ import { Delete, Read } from '../../APIServices/CRUDServices';
 import { ErrorToast, SuccessToast } from '../../Helper/ValidationHelper';
 import FullScreenLoader from "../Common/FullScreenLoader";
 import "./ListTable.css";
+import { useNavigate } from "react-router-dom";
 
 const ListTable = () => {
     const [dataList,setDataList]=useState([])
+    let navigate = useNavigate();
     useEffect(()=>{
        Read()
        .then((result)=>{
@@ -27,6 +29,8 @@ const ListTable = () => {
 
     }
     const UpdateItem=(id)=>{
+      
+        navigate(`/update/${id}`, { replace: true });
         console.log(id)
     }
 

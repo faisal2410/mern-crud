@@ -6,6 +6,7 @@ import {
   SuccessToast,
 } from "../../Helper/ValidationHelper";
 import FullScreenLoader from "../Common/FullScreenLoader";
+import { useNavigate } from "react-router-dom";
 
 const CreateForm = () => {
   let ProductName,
@@ -14,6 +15,7 @@ const CreateForm = () => {
     UnitPrice,
     Qty,
     TotalPrice,Loader = useRef();
+    let navigate = useNavigate();
   const SaveData = () => {
     let Product_Name = ProductName.value;
     let Product_Code = ProductCode.value;
@@ -53,6 +55,7 @@ const CreateForm = () => {
           UnitPrice.value = "";
           Qty.value = "";
           TotalPrice.value = "";
+          navigate("/")
         } else {
           ErrorToast("Request Failed. Try again");
         }

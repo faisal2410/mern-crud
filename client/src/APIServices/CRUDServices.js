@@ -47,6 +47,24 @@ const Read = () => {
       return false;
     });
 };
+const ReadById=(id)=>{
+  let URL = `/api/v1/ReadProductById/${id}`;
+  return axios
+    .get(URL)
+    .then((res) => {
+      if (res.status === 200) {
+        return res.data["data"];
+      } else {
+        return false;
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      return false;
+    });
+
+}
+
 const Delete = (id) => {
   let URL = `/api/v1/DeleteProduct/${id}`;
   return axios
@@ -96,5 +114,5 @@ const Update = (
     });
 };
 
-export{Create,Read,Delete,Update};
+export{Create,Read,ReadById,Delete,Update};
 
